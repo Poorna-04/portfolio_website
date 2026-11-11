@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="TuneTown is an Indian online store for musical instruments and audio equipment."
+    />
+    <title>TuneTown</title>
+    <script>
+      // Apply the saved theme before React paints to prevent a light/dark flash.
+      try {
+        const record = JSON.parse(localStorage.getItem('tunetown:v1:preferences'));
+        const preference = record?.schemaVersion === 1 ? record.data?.theme : 'system';
+        const theme =
+          preference === 'system'
+            ? matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light'
+            : preference || 'light';
+        document.documentElement.dataset.theme = theme;
+        document.documentElement.style.colorScheme = theme;
+      } catch {
+        document.documentElement.dataset.theme = 'light';
+      }
+    </script>
+    <script type="module" crossorigin src="/projects/tunetown/assets/index-D8Cq4_N1.js"></script>
+    <link rel="modulepreload" crossorigin href="/projects/tunetown/assets/jsx-runtime-D3jfb0Ew.js">
+    <link rel="modulepreload" crossorigin href="/projects/tunetown/assets/serviceError-9QD3nrE2.js">
+    <link rel="stylesheet" crossorigin href="/projects/tunetown/assets/index-DbuGLTxl.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

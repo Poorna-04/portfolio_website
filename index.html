@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Poornashree M · Software Engineer</title>
+<meta name="description" content="Poornashree M, Associate Technical Consultant at Perficient. Backend and full-stack engineer working with Java, Spring Boot, React and cloud platforms.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Poornashree M · Software Engineer">
+<meta property="og:description" content="Backend and full-stack engineer. Java, Spring Boot, React, PostgreSQL, GCP. Building hospital, wealth-management and e-commerce platforms.">
+<meta property="og:image" content="assets/shot-careaxis.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1e3a8a">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap">
+<script>
+  try { var t = localStorage.getItem('pm-theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
+<style>
+:root{
+  --bg:#f7f8fc; --bg2:#eef1f9; --card:#ffffff; --ink:#0d1b3e; --ink2:#22325a; --muted:#5d6782; --faint:#9aa3bb;
+  --line:#e2e6f0; --line2:#cfd5e4; --invert:#1e3a8a; --invert-ink:#ffffff; --accent:#2f5bd3;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --max:72rem; --r:14px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#120d1f; --bg2:#1a1330; --card:#1a1330; --ink:#f3efff; --ink2:#ddd4f5; --muted:#a59cc4; --faint:#665b88;
+    --line:#2a2145; --line2:#3a2f5c; --invert:#a78bfa; --invert-ink:#120d1f; --accent:#a78bfa; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#120d1f; --bg2:#1a1330; --card:#1a1330; --ink:#f3efff; --ink2:#ddd4f5; --muted:#a59cc4; --faint:#665b88;
+  --line:#2a2145; --line2:#3a2f5c; --invert:#a78bfa; --invert-ink:#120d1f; --accent:#a78bfa; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.65 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+::selection{background:var(--ink);color:var(--bg)}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 max(16px,env(safe-area-inset-left))}
+.mono{font-family:var(--mono);font-size:.78rem;letter-spacing:.02em}
+.muted{color:var(--muted)}
+.serif{font-family:var(--serif);font-weight:400;font-style:italic;letter-spacing:-.01em;color:var(--accent)}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
+.nav.scrolled{border-bottom-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:1rem}
+.brand{font-weight:600;letter-spacing:-.02em;display:flex;align-items:center;gap:.6rem}
+.brand i{font-family:var(--serif);font-size:1.25rem;font-weight:400}
+.brand .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 var(--ink);animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 45%,transparent)}70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.links{display:flex;gap:.25rem;align-items:center}
+.links a{font-size:.88rem;color:var(--muted);padding:.4rem .7rem;border-radius:8px;transition:color .2s,background .2s}
+.links a span{font-family:var(--mono);font-size:.68rem;margin-right:.3rem;color:var(--faint)}
+.links a:hover,.links a.on{color:var(--ink);background:var(--bg2)}
+.icon-btn{width:36px;height:36px;border-radius:9px;border:1px solid var(--line);background:transparent;color:var(--ink);display:grid;place-items:center;cursor:pointer;transition:background .2s}
+.icon-btn:hover{background:var(--bg2)}
+.icon-btn svg{width:16px;height:16px}
+.menu-btn{display:none}
+
+/* hero */
+.hero{position:relative;padding:5.5rem 0 4.5rem;min-height:calc(100vh - 64px);display:flex;align-items:center}
+.hero .grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.85fr);gap:3.5rem;align-items:center;position:relative;z-index:1}
+#orb{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.9}
+.status{display:inline-flex;align-items:center;gap:.6rem;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:.35rem .9rem .35rem .65rem;font-size:.82rem;color:var(--ink2)}
+.status b{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:pulse 2.4s infinite}
+h1{font-size:clamp(2.6rem,6.4vw,5rem);line-height:1.02;letter-spacing:-.045em;font-weight:600;margin:1.4rem 0 0}
+h1 .serif{font-size:1.08em;letter-spacing:-.02em}
+.type{margin:1.4rem 0 0;font-family:var(--mono);font-size:.92rem;color:var(--muted);min-height:1.6em}
+.type span{color:var(--accent)}
+.type span::after{content:"";display:inline-block;width:.55em;height:1.05em;background:var(--accent);margin-left:2px;vertical-align:-.18em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.lede{max-width:40rem;color:var(--muted);font-size:1.08rem;margin:1.2rem 0 0}
+.cta{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:2.2rem}
+.btn{display:inline-flex;align-items:center;gap:.55rem;font:500 .9rem/1 var(--sans);padding:.85rem 1.25rem;border-radius:10px;border:1px solid var(--line2);background:var(--card);color:var(--ink);cursor:pointer;transition:transform .2s,background .2s,border-color .2s}
+.btn:hover{transform:translateY(-1px);border-color:var(--ink)}
+.btn.solid{background:var(--invert);color:var(--invert-ink);border-color:var(--invert)}
+.btn svg{width:15px;height:15px}
+
+/* id card */
+.idcard{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:1.4rem;box-shadow:0 1px 0 var(--line),0 30px 60px -30px rgba(0,0,0,.25);transform-style:preserve-3d;transition:transform .25s ease-out;will-change:transform}
+.idcard .top{display:flex;gap:1rem;align-items:center}
+.idcard .photo{width:84px;height:84px;flex:none;border-radius:14px;object-fit:cover;object-position:50% 30%;border:1px solid var(--line)}
+.idcard h2{margin:0;font-size:1.15rem;letter-spacing:-.02em}
+.idcard .role{margin:.1rem 0 0;color:var(--muted);font-size:.88rem}
+.idcard dl{margin:1.2rem 0 0;display:grid}
+.idcard dl div{display:flex;justify-content:space-between;gap:1rem;padding:.62rem 0;border-top:1px dashed var(--line2);font-size:.86rem}
+.idcard dt{color:var(--muted)}
+.idcard dd{margin:0;text-align:right;font-weight:500}
+
+/* stats */
+.stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg)}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.stat{padding:1.6rem 1.2rem;border-left:1px solid var(--line)}
+.stat:first-child{border-left:0;padding-left:0}
+.stat b{display:block;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:600;letter-spacing:-.04em;line-height:1.1}
+.stat > span{color:var(--muted);font-size:.84rem}
+
+/* sections */
+section.block{padding:6.5rem 0 1rem}
+.head{display:grid;grid-template-columns:minmax(0,14rem) minmax(0,1fr);gap:2rem;margin-bottom:3rem;align-items:end}
+.head .mono{color:var(--muted)}
+.head .mono b{color:var(--ink);font-weight:500}
+.head h2{margin:0;font-size:clamp(1.9rem,4vw,3rem);letter-spacing:-.04em;line-height:1.05;font-weight:600}
+.head h2 .serif{font-size:1.1em}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+
+/* about */
+.about{display:grid;grid-template-columns:minmax(0,14rem) minmax(0,1fr);gap:2rem}
+.about .big{font-size:clamp(1.25rem,2.4vw,1.7rem);line-height:1.4;letter-spacing:-.02em;margin:0;color:var(--ink)}
+.about .big em{font-family:var(--serif);font-size:1.12em}
+.about p.s{color:var(--muted);max-width:44rem;margin:1.4rem 0 0}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:2.4rem}
+.facts div{background:var(--card);padding:1.2rem}
+.facts h3{margin:0 0 .3rem;font-size:.95rem}
+.facts p{margin:0;color:var(--muted);font-size:.88rem;line-height:1.55}
+
+/* experience */
+.xp{border-top:1px solid var(--line)}
+.job{display:grid;grid-template-columns:minmax(0,14rem) minmax(0,1fr);gap:2rem;padding:2.4rem 0;border-bottom:1px solid var(--line)}
+.job .when{color:var(--muted)}
+.job .when b{display:block;color:var(--ink);font-family:var(--sans);font-size:1rem;font-weight:600;margin-bottom:.2rem;letter-spacing:-.01em}
+.job h3{margin:0;font-size:1.35rem;letter-spacing:-.025em}
+.job .at{color:var(--muted);margin:.1rem 0 .9rem}
+.job p.intro{margin:0 0 1.2rem;color:var(--ink2);max-width:46rem}
+.items{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem}
+.item{border:1px solid var(--line);border-radius:12px;padding:1rem 1.1rem;background:var(--card);transition:border-color .2s}
+.item:hover{border-color:var(--accent)}
+.item .n{color:var(--faint)}
+.item h4{margin:.2rem 0 .35rem;font-size:.98rem;letter-spacing:-.01em}
+.item p{margin:0 0 .6rem;color:var(--muted);font-size:.87rem;line-height:1.55}
+.chips{display:flex;flex-wrap:wrap;gap:.35rem;list-style:none;margin:0;padding:0}
+.chips li{font-family:var(--mono);font-size:.7rem;padding:.22rem .5rem;border:1px solid var(--line);border-radius:6px;color:var(--ink2);background:var(--bg)}
+
+/* projects */
+.project{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:2.6rem;padding:2.8rem 0;border-top:1px solid var(--line);align-items:start}
+.project:last-of-type{border-bottom:1px solid var(--line)}
+.project:nth-of-type(even) .shot{order:2}
+.project > .shot{position:sticky;top:96px}
+.stackl{margin:0 0 .5rem;color:var(--muted)}
+.hl li b{color:var(--ink);font-weight:600}
+figure.shot{margin:0}
+.shot{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--bg2);aspect-ratio:16/10;display:block}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:top left;filter:grayscale(1) contrast(1.04);transform:scale(1.001);transition:filter .6s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.shot:hover img{filter:grayscale(0);transform:scale(1.025)}
+.shot .chrome{position:absolute;top:0;left:0;right:0;height:30px;display:flex;align-items:center;gap:6px;padding:0 12px;background:color-mix(in srgb,var(--card) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:1}
+.shot .chrome i{width:9px;height:9px;border-radius:50%;border:1px solid var(--line2)}
+.shot .chrome span{margin-left:10px;font-family:var(--mono);font-size:.66rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.shot .live{position:absolute;right:12px;bottom:12px;z-index:1;background:var(--invert);color:var(--invert-ink);font-size:.78rem;font-weight:500;padding:.45rem .75rem;border-radius:8px;display:flex;gap:.4rem;align-items:center;opacity:0;transform:translateY(6px);transition:all .3s}
+.shot:hover .live,.shot:focus-visible .live{opacity:1;transform:none}
+.ptag{display:flex;gap:.8rem;align-items:center;color:var(--muted)}
+.ptag .pill{border:1px solid var(--line2);border-radius:999px;padding:.12rem .55rem;color:var(--ink)}
+.project h3{margin:.8rem 0 .2rem;font-size:clamp(1.6rem,3vw,2.2rem);letter-spacing:-.04em;line-height:1.1}
+.project .sub{margin:0 0 1rem;color:var(--muted);font-size:1rem}
+.project p.desc{margin:0 0 1.2rem;color:var(--ink2)}
+.hl{list-style:none;margin:0 0 1.3rem;padding:0;display:grid;gap:.55rem}
+.hl li{position:relative;padding-left:1.25rem;font-size:.92rem;color:var(--ink2);line-height:1.55}
+.hl li::before{content:"";position:absolute;left:0;top:.62em;width:.6rem;height:2px;background:var(--accent)}
+.metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:1.3rem}
+.metrics div{background:var(--card);padding:.8rem .9rem}
+.metrics b{display:block;font-size:1.25rem;letter-spacing:-.03em;line-height:1.2}
+.metrics span{font-size:.75rem;color:var(--muted)}
+.plinks{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.4rem}
+.creds{margin-top:.9rem;font-size:.78rem;color:var(--muted)}
+.creds code{font-family:var(--mono);color:var(--ink2);background:var(--bg2);padding:.1rem .35rem;border-radius:4px;font-size:.74rem}
+
+/* earlier projects */
+.rows{border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:3rem minmax(0,1.2fr) minmax(0,1.6fr) auto;gap:1.5rem;align-items:start;padding:1.6rem 0;border-bottom:1px solid var(--line);transition:padding .3s,background .3s}
+.row:hover{background:var(--bg2);padding-left:1rem;padding-right:1rem}
+.row .n{color:var(--faint);padding-top:.25rem}
+.row h3{margin:0;font-size:1.15rem;letter-spacing:-.02em}
+.row .cat{color:var(--muted);font-size:.85rem}
+.row p{margin:0 0 .7rem;color:var(--muted);font-size:.9rem}
+.row .go{width:38px;height:38px;border-radius:50%;border:1px solid var(--line2);display:grid;place-items:center;transition:all .25s}
+.row:hover .go{background:var(--invert);color:var(--invert-ink);transform:rotate(-45deg)}
+.row .go svg{width:15px;height:15px}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.skill{background:var(--card);padding:1.5rem}
+.skill .mono{color:var(--faint)}
+.skill h3{margin:.25rem 0 .9rem;font-size:1.02rem;letter-spacing:-.01em}
+.skill ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.4rem}
+.skill li{font-size:.84rem;border:1px solid var(--line);border-radius:7px;padding:.28rem .6rem;background:var(--bg);transition:all .2s}
+.skill li:hover{background:var(--invert);color:var(--invert-ink);border-color:var(--invert)}
+
+/* education + certs */
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem}
+.panel{border:1px solid var(--line);border-radius:var(--r);padding:1.6rem;background:var(--card)}
+.panel h3{margin:0 0 1rem;font-size:.78rem;font-family:var(--mono);font-weight:400;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.edu{padding:1rem 0;border-top:1px dashed var(--line2)}
+.edu:first-of-type{border-top:0;padding-top:0}
+.edu .t{display:flex;justify-content:space-between;gap:1rem}
+.edu h4{margin:0;font-size:1.02rem}
+.edu p{margin:.15rem 0 0;color:var(--muted);font-size:.88rem}
+.edu .score{font-family:var(--mono);font-size:.8rem;border:1px solid var(--line2);padding:.15rem .5rem;border-radius:6px;white-space:nowrap;height:fit-content}
+.list{list-style:none;margin:0;padding:0}
+.list li{display:flex;gap:.9rem;padding:.9rem 0;border-top:1px dashed var(--line2);font-size:.92rem}
+.list li:first-child{border-top:0;padding-top:0}
+.list li .mono{color:var(--faint);padding-top:.15rem}
+
+/* leetcode */
+.lc{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:1.2rem;margin-top:1.2rem}
+.lc .total{display:flex;align-items:center;gap:1.4rem}
+.ring{width:118px;height:118px;flex:none}
+.ring circle{fill:none;stroke-width:8}
+.ring .bg{stroke:var(--line)}
+.ring .fg{stroke:var(--accent);stroke-linecap:round;transform:rotate(-90deg);transform-origin:50% 50%;transition:stroke-dashoffset 1.6s cubic-bezier(.2,.7,.2,1)}
+.lcbars{display:grid;gap:.8rem}
+.lcbar .t{display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:.3rem}
+.lcbar .track{height:6px;background:var(--line);border-radius:6px;overflow:hidden}
+.lcbar .track i{display:block;height:100%;width:0;background:var(--accent);border-radius:6px;transition:width 1.4s cubic-bezier(.2,.7,.2,1)}
+.lcbar:nth-child(1) .track i{opacity:.45}.lcbar:nth-child(2) .track i{opacity:.75}
+.topics{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem}
+.topics span{font-size:.78rem;border:1px solid var(--line);border-radius:6px;padding:.2rem .5rem;color:var(--muted)}
+.topics span b{color:var(--ink);font-weight:500;margin-left:.25rem}
+
+/* contact */
+.contact{margin:7rem auto 0;padding-top:5rem;padding-bottom:5rem;text-align:left;position:relative}
+.contact::before{content:"";position:absolute;top:0;left:max(16px,env(safe-area-inset-left));right:max(16px,env(safe-area-inset-left));border-top:1px solid var(--line)}
+.contact .mono{color:var(--muted)}
+.contact h2{font-size:clamp(2.4rem,7vw,5.6rem);letter-spacing:-.05em;line-height:1;margin:1rem 0 1.6rem;font-weight:600}
+.contact h2 .serif{font-size:1.06em}
+.mail{display:inline-flex;align-items:center;gap:.7rem;font-size:clamp(1.05rem,2.6vw,1.6rem);font-weight:500;letter-spacing:-.02em;border-bottom:2px solid var(--accent);padding-bottom:.2rem;overflow-wrap:anywhere}
+.mail svg{width:.9em;height:.9em;transition:transform .3s}
+.mail:hover svg{transform:translate(3px,-3px)}
+.socials{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:2.2rem}
+footer{border-top:1px solid var(--line);padding:1.6rem 0 2.4rem;color:var(--muted);font-size:.84rem}
+footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:var(--invert);color:var(--invert-ink);padding:.7rem 1.1rem;border-radius:10px;font-size:.88rem;opacity:0;pointer-events:none;transition:all .3s;z-index:100}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.cursor{position:fixed;top:0;left:0;width:340px;height:340px;border-radius:50%;pointer-events:none;z-index:0;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 9%,transparent),transparent 65%);transform:translate(-50%,-50%);transition:opacity .4s;opacity:0}
+
+@media (max-width:960px){
+  #orb{opacity:.45}
+  .hero .grid{grid-template-columns:minmax(0,1fr);gap:2.5rem}
+  .hero{min-height:auto;padding:3.5rem 0 3.5rem}
+  .idcard{max-width:440px}
+  .stats .wrap{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stat:nth-child(3){border-left:0;padding-left:0}
+  .stat:nth-child(n+3){border-top:1px solid var(--line)}
+  .head,.about,.job{grid-template-columns:minmax(0,1fr);gap:.8rem}
+  .project{grid-template-columns:minmax(0,1fr);gap:1.6rem}
+  .project:nth-of-type(even) .shot{order:0}
+  .skills{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .row{grid-template-columns:2rem minmax(0,1fr) auto}
+  .row > div:nth-child(3){grid-column:2 / 4}
+  .lc{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:720px){
+  .links{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;align-items:stretch;background:var(--bg);border-bottom:1px solid var(--line);padding:.6rem 16px 1rem}
+  .links.open{display:flex}
+  .links a{padding:.75rem .6rem}
+  .menu-btn{display:grid}
+  .items,.two,.facts{grid-template-columns:minmax(0,1fr)}
+  .skills{grid-template-columns:minmax(0,1fr)}
+  .stats .wrap{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stat{padding:1.2rem .9rem}
+  .stat:nth-child(odd){border-left:0;padding-left:0}
+  .stat:nth-child(even){padding-left:.9rem}
+  .metrics b{font-size:1.05rem}
+  section.block{padding-top:4.5rem}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div class="cursor" aria-hidden="true"></div>
+
+<header class="nav" id="top">
+  <div class="wrap">
+    <a href="#home" class="brand" aria-label="Poornashree M, home"><span class="dot"></span>Poornashree <i>M.</i></a>
+    <nav class="links" id="links" aria-label="Main">
+      <a href="#about"><span>01</span>About</a>
+      <a href="#experience"><span>02</span>Experience</a>
+      <a href="#work"><span>03</span>Work</a>
+      <a href="#skills"><span>04</span>Skills</a>
+      <a href="#education"><span>05</span>Education</a>
+      <a href="#contact"><span>06</span>Contact</a>
+    </nav>
+    <div style="display:flex;gap:.5rem">
+      <button class="icon-btn" id="theme" type="button" aria-label="Switch light or dark theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" id="menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="links">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <canvas id="orb" aria-hidden="true"></canvas>
+  <div class="wrap grid">
+    <div>
+      <span class="status"><b></b>Associate Technical Consultant · Perficient</span>
+      <h1>Building the <span class="serif">systems</span><br>behind the screen.</h1>
+      <p class="type">&gt; currently working on <span id="typed">Java · Spring Boot · Cloud</span></p>
+      <p class="lede">I'm Poornashree, a backend and full-stack engineer. I design services, APIs and data models that hold up in production, and I ship the interface on top. Here's what I'm building.</p>
+      <div class="cta">
+        <a class="btn solid" href="#work">See what I'm building
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
+        <button class="btn" type="button" data-resume>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></svg><span>Download résumé</span></button>
+        <button class="btn" type="button" data-copy="poornashree2004@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>Copy email</span></button>
+      </div>
+    </div>
+    <aside class="idcard" id="idcard" aria-label="Profile summary">
+      <div class="top">
+        <img class="photo" src="assets/profile.webp" alt="Portrait of Poornashree M" width="84" height="84">
+        <div>
+          <h2>Poornashree M</h2>
+          <p class="role">Associate Technical Consultant · Perficient</p>
+        </div>
+      </div>
+      <dl>
+        <div><dt>Backend</dt><dd>Java, Spring Boot, FastAPI</dd></div>
+        <div><dt>Frontend</dt><dd>React, TypeScript</dd></div>
+        <div><dt>Cloud</dt><dd>GCP, Kubernetes, Docker</dd></div>
+        <div><dt>Education</dt><dd>B.Tech, VIT · 9.26 CGPA</dd></div>
+        <div><dt>Work email</dt><dd>poornashree.m@perficient.com</dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="wrap">
+    <div class="stat"><b data-count="7">0</b><span>Months interning at Poshmark</span></div>
+    <div class="stat"><b data-count="4">0</b><span>Production libraries shipped</span></div>
+    <div class="stat"><b data-count="9.26" data-dec="2">0</b><span>CGPA at VIT</span></div>
+    <div class="stat"><b data-count="244">0</b><span>LeetCode problems solved</span></div>
+  </div>
+</div>
+
+<section class="block wrap" id="about">
+  <div class="about reveal">
+    <p class="mono muted"><b style="color:var(--ink);font-weight:500">01</b> / About</p>
+    <div>
+      <p class="big">I like understanding what happens <em>behind the interface</em>: the services, APIs, databases and infrastructure that make an application work, and the small decisions that keep it working when real people use it.</p>
+      <p class="s">I graduated in Electronics and Computer Engineering from VIT Chennai and spent seven months on Poshmark's core infrastructure team building shared Java libraries for observability, sampling, secrets and Redis. At Perficient I build full platforms end to end, from the requirements and the API contract to cloud deployment and the screens people use.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block wrap" id="experience">
+  <div class="head reveal">
+    <p class="mono"><b>02</b> / Experience</p>
+    <h2>Where I've <span class="serif">worked</span>.</h2>
+  </div>
+  <div class="xp">
+    <article class="job reveal">
+      <p class="when mono"><b>Perficient</b>Sep 2026 – Present<br>Bengaluru</p>
+      <div>
+        <h3>Associate Technical Consultant</h3>
+        <p class="at">Global Graduate Training Program</p>
+        <p class="intro">Designing and building enterprise platforms end to end: requirements and architecture decisions, OpenAPI contracts, Spring Boot and FastAPI services, React frontends and Google Cloud deployment, with AI coding assistants used under written rules and review.</p>
+        <div class="items">
+          <div class="item"><span class="n mono">01</span><h4>CareAxis · hospital management</h4><p>One system for a hospital's whole patient journey, with prediction and triage services behind it.</p><ul class="chips"><li>Spring Boot</li><li>FastAPI</li><li>GCP</li></ul></div>
+          <div class="item"><span class="n mono">02</span><h4>NAO · wealth onboarding</h4><p>Digital account opening with KYC review, OCR checks and an advisor console.</p><ul class="chips"><li>Spring Boot</li><li>React</li><li>PostgreSQL</li></ul></div>
+          <div class="item"><span class="n mono">03</span><h4>TuneTown · e-commerce</h4><p>A complete online instrument store with rentals, bookings and a store-manager console.</p><ul class="chips"><li>React</li><li>Redux</li><li>Spring Boot</li></ul></div>
+          <div class="item"><span class="n mono">04</span><h4>Engineering practice</h4><p>Spec-driven development, architecture decision records and C4 diagrams on every project.</p><ul class="chips"><li>OpenSpec</li><li>ADRs</li><li>C4</li></ul></div>
+        </div>
+      </div>
+    </article>
+    <article class="job reveal">
+      <p class="when mono"><b>Poshmark</b>7 months<br>Chennai</p>
+      <div>
+        <h3>Software Engineer Intern</h3>
+        <p class="at">Core Infrastructure team</p>
+        <p class="intro">Built and maintained internal platforms, tools and shared libraries that other engineering teams depend on, improving reliability and the developer experience.</p>
+        <div class="items">
+          <div class="item"><span class="n mono">01</span><h4>Centralised observability library</h4><p>A centralised Java observability library that monitors microservice dependencies, tracks their health and connectivity, and exposes metrics to Datadog and Prometheus.</p><ul class="chips"><li>Java</li><li>Microservices</li><li>Micrometer</li><li>Datadog</li><li>Prometheus</li></ul></div>
+          <div class="item"><span class="n mono">02</span><h4>Sampler library</h4><p>Contributed to a Java library implementing probabilistic sampling, integrated into a Ruby application via JRuby to cut high-volume logging and distributed-tracing overhead at scale.</p><ul class="chips"><li>Java</li><li>Jenkins</li><li>Kibana</li></ul></div>
+          <div class="item"><span class="n mono">03</span><h4>Credentials library</h4><p>Caches secrets for a configurable interval and refreshes them on demand, so services stop creating secret-manager clients repeatedly.</p><ul class="chips"><li>Java</li><li>Kubernetes</li><li>Jenkins</li><li>Kibana</li><li>Microservices</li></ul></div>
+          <div class="item"><span class="n mono">04</span><h4>Redis connection management</h4><p>Migrated unclustered clients to pooled Jedis connections for better connection reuse and lower latency.</p><ul class="chips"><li>Redis</li><li>Jedis</li><li>Kubernetes</li><li>Datadog</li></ul></div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="block wrap" id="work">
+  <div class="head reveal">
+    <p class="mono"><b>03</b> / Selected work</p>
+    <h2>What I'm <span class="serif">building</span>.</h2>
+  </div>
+
+  <article class="project reveal">
+    <figure class="shot">
+      <div class="chrome"><i></i><i></i><i></i><span>CareAxis · emergency queue</span></div>
+      <img src="assets/shot-careaxis.webp" alt="CareAxis emergency queue ordering patients by urgency" loading="lazy" width="1440" height="900">
+    </figure>
+    <div>
+      <div class="ptag mono"><span class="pill">Healthcare</span></div>
+      <h3>CareAxis</h3>
+      <p class="sub">A hospital management system that takes a patient from registration to discharge in one place.</p>
+      <p class="desc">One shared system for front desk, doctors, nurses, lab, pharmacy and billing, with predictions that help staff act earlier.</p>
+      <ul class="hl">
+        <li><b>Smarter emergency care:</b> triage orders patients by urgency, not arrival time.</li>
+        <li><b>Better planning:</b> no-show prediction and a 48-hour bed forecast.</li>
+        <li><b>Safer prescribing:</b> allergy and drug-interaction checks before anything reaches the pharmacy.</li>
+      </ul>
+      <p class="stackl mono">Tech stack</p>
+      <ul class="chips"><li>Java 21</li><li>Spring Boot</li><li>FastAPI</li><li>Python</li><li>React</li><li>TypeScript</li><li>PostgreSQL</li><li>Google Pub/Sub</li><li>Kubernetes (GKE)</li><li>Docker</li></ul>
+    </div>
+  </article>
+
+  <article class="project reveal">
+    <figure class="shot">
+      <div class="chrome"><i></i><i></i><i></i><span>NAO · Advisor 360 portfolio</span></div>
+      <img src="assets/shot-nao.webp" alt="Advisor 360 portfolio view with asset allocation against target" loading="lazy" width="1440" height="900">
+    </figure>
+    <div>
+      <div class="ptag mono"><span class="pill">Banking &amp; wealth management</span></div>
+      <h3>NAO &amp; Advisor 360</h3>
+      <p class="sub">Paperless account opening and an advisor console for a wealth-management firm.</p>
+      <p class="desc">Clients open an investment account online in one guided flow; the back office reviews it in one place; advisors pick up from there.</p>
+      <ul class="hl">
+        <li><b>Paperless onboarding:</b> 15-step application with documents, consents and e-signature.</li>
+        <li><b>Faster KYC:</b> Operations and Compliance review, with OCR that flags ID mismatches.</li>
+        <li><b>Advisor 360:</b> portfolios, risk alerts and AI-written meeting summaries.</li>
+      </ul>
+      <p class="stackl mono">Tech stack</p>
+      <ul class="chips"><li>Java 21</li><li>Spring Boot</li><li>Spring Security · JWT</li><li>React</li><li>TypeScript</li><li>Tailwind CSS</li><li>PostgreSQL</li><li>Flyway</li><li>Tesseract OCR</li><li>Gemini</li></ul>
+    </div>
+  </article>
+
+  <article class="project reveal">
+    <figure class="shot">
+      <div class="chrome"><i></i><i></i><i></i><span>TuneTown · storefront</span></div>
+      <img src="assets/shot-tunetown.webp" alt="TuneTown storefront with offers and catalogue" loading="lazy" width="1440" height="900">
+    </figure>
+    <div>
+      <div class="ptag mono"><span class="pill">E-commerce</span></div>
+      <h3>TuneTown</h3>
+      <p class="sub">An online store for musical instruments, with rentals and tuning sessions.</p>
+      <p class="desc">One store to buy, rent or service instruments, with a console for the store manager.</p>
+      <ul class="hl">
+        <li><b>Easy shopping:</b> search, wishlist, cart and a three-step checkout.</li>
+        <li><b>Rentals and tuning:</b> bookings that never double-book an instrument.</li>
+        <li><b>Store console:</b> products, orders and rentals with AI-assisted search.</li>
+      </ul>
+      <p class="stackl mono">Tech stack</p>
+      <ul class="chips"><li>React</li><li>Redux</li><li>React Router</li><li>Java</li><li>Spring Boot</li><li>PostgreSQL</li><li>REST APIs</li></ul>
+    </div>
+  </article>
+
+  <div class="head reveal" style="margin-top:6rem;margin-bottom:1.6rem">
+    <p class="mono"><b>03.1</b> / Earlier projects</p>
+    <h2 style="font-size:clamp(1.5rem,3vw,2.1rem)">From college and side work.</h2>
+  </div>
+  <div class="rows reveal">
+    <a class="row" href="https://github.com/Poorna-04/dnce-hub" target="_blank" rel="noopener">
+      <span class="n mono">01</span>
+      <div><h3>DnceHub</h3><span class="cat">Full stack</span></div>
+      <div><p>Instructor booking platform for dance workshops. JWT auth with student and instructor roles, layered Spring Boot API, Docker and GitHub Actions CI/CD across environments.</p><ul class="chips"><li>Spring Boot</li><li>Spring Security</li><li>PostgreSQL</li><li>Redis</li><li>Docker</li><li>Next.js</li></ul></div>
+      <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+    <a class="row" href="https://github.com/Poorna-04/Harmoniq" target="_blank" rel="noopener">
+      <span class="n mono">02</span>
+      <div><h3>Harmoniq</h3><span class="cat">Machine learning</span></div>
+      <div><p>Music recommendations from natural-language search (Sentence Transformers) and audio features (Librosa), with Spotify metadata for 1,000+ songs.</p><ul class="chips"><li>Python</li><li>Sentence Transformers</li><li>Librosa</li><li>Spotify API</li></ul></div>
+      <span class="go" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+    <div class="row">
+      <span class="n mono">03</span>
+      <div><h3>Post-meal glucose prediction</h3><span class="cat">Computer vision</span></div>
+      <div><p>YOLO detects food in meal photos, maps it to nutrients, and a regression model predicts post-meal blood glucose from pre-meal levels and ICMR clinical data.</p><ul class="chips"><li>Python</li><li>YOLO</li><li>CNN</li><li>Regression</li></ul></div>
+      <span></span>
+    </div>
+  </div>
+</section>
+
+<section class="block wrap" id="skills">
+  <div class="head reveal">
+    <p class="mono"><b>04</b> / Skills</p>
+    <h2>The <span class="serif">toolkit</span>.</h2>
+  </div>
+  <div class="skills reveal">
+    <div class="skill"><span class="mono">01</span><h3>Languages</h3><ul><li>Java</li><li>Python</li><li>TypeScript</li><li>JavaScript</li><li>SQL</li></ul></div>
+    <div class="skill"><span class="mono">02</span><h3>Backend</h3><ul><li>Spring Boot</li><li>Spring Security · JWT</li><li>JPA / Hibernate</li><li>FastAPI</li><li>REST · OpenAPI</li><li>Flyway</li></ul></div>
+    <div class="skill"><span class="mono">03</span><h3>Frontend</h3><ul><li>React</li><li>Redux</li><li>React Router</li><li>Next.js</li><li>Tailwind CSS</li><li>Vite</li></ul></div>
+    <div class="skill"><span class="mono">04</span><h3>Data &amp; messaging</h3><ul><li>PostgreSQL</li><li>Redis</li><li>Google Pub/Sub</li><li>SSE</li></ul></div>
+    <div class="skill"><span class="mono">05</span><h3>Cloud &amp; DevOps</h3><ul><li>Docker</li><li>Kubernetes · GKE</li><li>GitHub Actions</li><li>Jenkins</li><li>Datadog</li><li>Prometheus · Kibana</li></ul></div>
+    <div class="skill"><span class="mono">06</span><h3>Practices</h3><ul><li>JUnit · MockMvc</li><li>Testcontainers</li><li>Microservices</li><li>OpenSpec · ADRs</li><li>AI-assisted development</li></ul></div>
+  </div>
+</section>
+
+<section class="block wrap" id="education">
+  <div class="head reveal">
+    <p class="mono"><b>05</b> / Education &amp; recognition</p>
+    <h2>Learning, <span class="serif">continuously</span>.</h2>
+  </div>
+  <div class="two reveal">
+    <div class="panel">
+      <h3>Education</h3>
+      <div class="edu"><div class="t"><div><h4>Vellore Institute of Technology, Chennai</h4><p>B.Tech, Electronics and Computer Engineering · 2022 – 2026</p></div><span class="score">CGPA 9.26</span></div></div>
+      <div class="edu"><div class="t"><div><h4>Sunshine Senior Secondary School, Chennai</h4><p>Class XII, CBSE · 2022</p></div><span class="score">92.4%</span></div></div>
+    </div>
+    <div class="panel">
+      <h3>Certifications &amp; achievements</h3>
+      <ul class="list">
+        <li><span class="mono">01</span><span>Google Cloud: Gemini Enterprise Deployment</span></li>
+        <li><span class="mono">02</span><span>Microsoft Certified: Azure AI Fundamentals</span></li>
+        <li><span class="mono">03</span><span>Selected among 30 teams nationwide for the MVP round of Myntra HackerRamp WeForShe 2024</span></li>
+        <li><span class="mono">04</span><span>Marketing Lead, Event Management Club: led campaigns that raised event attendance by 30%</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="lc reveal">
+    <div class="panel total">
+      <svg class="ring" viewBox="0 0 120 120" aria-hidden="true"><circle class="bg" cx="60" cy="60" r="52"/><circle class="fg" id="ring" cx="60" cy="60" r="52"/></svg>
+      <div><p class="mono muted" style="margin:0">LeetCode</p><b style="font-size:2.2rem;letter-spacing:-.04em;line-height:1.1;display:block">244</b><span class="muted" style="font-size:.88rem">problems solved · 650 submissions</span><br><a class="mono" href="https://leetcode.com/u/M_Poorna_shree/" target="_blank" rel="noopener" style="border-bottom:1px solid var(--ink)">@M_Poorna_shree ↗</a></div>
+    </div>
+    <div class="panel">
+      <div class="lcbars">
+        <div class="lcbar"><div class="t"><span>Easy</span><span class="mono">95</span></div><div class="track"><i data-w="39"></i></div></div>
+        <div class="lcbar"><div class="t"><span>Medium</span><span class="mono">139</span></div><div class="track"><i data-w="57"></i></div></div>
+        <div class="lcbar"><div class="t"><span>Hard</span><span class="mono">10</span></div><div class="track"><i data-w="4"></i></div></div>
+      </div>
+      <div class="topics"><span>Hash Table<b>55</b></span><span>String<b>53</b></span><span>DFS / BFS<b>46</b></span><span>Two Pointers<b>39</b></span><span>Math<b>35</b></span><span>Sorting<b>30</b></span><span>DP<b>21</b></span><span>Sliding Window<b>19</b></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact wrap" id="contact">
+  <p class="mono"><b style="color:var(--ink);font-weight:500">06</b> / Contact</p>
+  <h2 class="reveal">Let's build something<br><span class="serif">that lasts.</span></h2>
+  <a class="mail" href="mailto:poornashree2004@gmail.com">poornashree2004@gmail.com
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></a>
+  <p style="margin:1rem 0 0"><a class="mail" style="font-size:clamp(.95rem,2vw,1.2rem);border-bottom-width:1px" href="mailto:poornashree.m@perficient.com">poornashree.m@perficient.com
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></a> <span class="muted" style="font-size:.85rem;margin-left:.4rem">work</span></p>
+  <div class="socials">
+    <a class="btn" href="https://www.linkedin.com/in/poornashree-m-4301a9278/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <a class="btn" href="https://github.com/Poorna-04" target="_blank" rel="noopener">GitHub ↗</a>
+    <a class="btn" href="https://leetcode.com/u/M_Poorna_shree/" target="_blank" rel="noopener">LeetCode ↗</a>
+    <a class="btn" href="tel:+916382174395">+91 63821 74395</a>
+    <button class="btn solid" type="button" data-resume><span>Download résumé</span></button>
+  </div>
+</section>
+</main>
+
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var root = document.documentElement;
+  function toast(t) { var el = document.getElementById('toast'); el.textContent = t; el.classList.add('on'); clearTimeout(toast.t); toast.t = setTimeout(function () { el.classList.remove('on'); }, 1800); }
+
+  // theme
+  document.getElementById('theme').addEventListener('click', function () {
+    var dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+    root.dataset.theme = dark ? 'light' : 'dark';
+    try { localStorage.setItem('pm-theme', root.dataset.theme); } catch (e) {}
+  });
+
+  // mobile menu
+  var menu = document.getElementById('menu'), links = document.getElementById('links');
+  menu.addEventListener('click', function () { var o = links.classList.toggle('open'); menu.setAttribute('aria-expanded', o); });
+  links.addEventListener('click', function (e) { if (e.target.closest('a')) { links.classList.remove('open'); menu.setAttribute('aria-expanded', 'false'); } });
+
+  // nav border + active link
+  var nav = document.querySelector('.nav');
+  addEventListener('scroll', function () { nav.classList.toggle('scrolled', scrollY > 8); }, { passive: true });
+  var navLinks = [].slice.call(links.querySelectorAll('a'));
+  var spy = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) navLinks.forEach(function (a) { a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id); }); }); }, { rootMargin: '-45% 0px -50% 0px' });
+  ['about', 'experience', 'work', 'skills', 'education', 'contact'].forEach(function (id) { spy.observe(document.getElementById(id)); });
+
+  // reveal
+  var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+
+  // counters
+  var co = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (!e.isIntersecting) return; co.unobserve(e.target);
+      var el = e.target, to = parseFloat(el.dataset.count), dec = +(el.dataset.dec || 0), t0 = performance.now(), d = reduce ? 0 : 1400;
+      (function step(t) { var p = d ? Math.min(1, (t - t0) / d) : 1; var v = to * (1 - Math.pow(1 - p, 3)); el.textContent = dec ? v.toFixed(dec) : Math.round(v).toLocaleString('en-IN'); if (p < 1) requestAnimationFrame(step); })(t0);
+    });
+  }, { threshold: .5 });
+  document.querySelectorAll('[data-count]').forEach(function (el) { co.observe(el); });
+
+  // leetcode
+  var ring = document.getElementById('ring'), C = 2 * Math.PI * 52;
+  ring.style.strokeDasharray = C; ring.style.strokeDashoffset = C;
+  var lo = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { ring.style.strokeDashoffset = C * (1 - 244 / 400); document.querySelectorAll('.lcbar i').forEach(function (i) { i.style.width = i.dataset.w + '%'; }); lo.disconnect(); } }, { threshold: .4 });
+  lo.observe(ring);
+
+  // typed
+  var typed = document.getElementById('typed');
+  if (!reduce) {
+    var words = ['Java · Spring Boot · Cloud', 'event-driven microservices', 'APIs that fail gracefully', 'React front ends', 'platform engineering'], i = 0, j = words[0].length, del = true;
+    (function tick() {
+      if (del) { j--; if (j === 0) { del = false; i = (i + 1) % words.length; } }
+      else { j++; if (j === words[i].length) { del = true; typed.textContent = words[i]; return setTimeout(tick, 1800); } }
+      typed.textContent = words[i].slice(0, j); setTimeout(tick, del ? 28 : 60);
+    })();
+  }
+
+  // copy email
+  document.querySelectorAll('[data-copy]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var text = b.dataset.copy;
+      (navigator.clipboard ? navigator.clipboard.writeText(text) : Promise.reject()).then(function () { toast('Email copied'); }, function () { location.href = 'mailto:' + text; });
+    });
+  });
+
+  // card tilt + cursor glow
+  var card = document.getElementById('idcard'), glow = document.querySelector('.cursor');
+  if (!reduce && matchMedia('(pointer:fine)').matches) {
+    addEventListener('pointermove', function (e) { glow.style.opacity = 1; glow.style.transform = 'translate(' + (e.clientX - 170) + 'px,' + (e.clientY - 170) + 'px)'; }, { passive: true });
+    card.addEventListener('pointermove', function (e) { var r = card.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5; card.style.transform = 'perspective(900px) rotateY(' + (x * 8) + 'deg) rotateX(' + (-y * 8) + 'deg)'; });
+    card.addEventListener('pointerleave', function () { card.style.transform = ''; });
+  }
+
+  // wireframe orb (monochrome 3D point sphere that follows the pointer)
+  var cv = document.getElementById('orb'), ctx = cv.getContext('2d'), N = 420, pts = [], mx = 0, my = 0, rx = 0, ry = 0, W, H, dpr;
+  for (var k = 0; k < N; k++) { var yk = 1 - (k / (N - 1)) * 2, rk = Math.sqrt(1 - yk * yk), th = k * 2.399963; pts.push([Math.cos(th) * rk, yk, Math.sin(th) * rk]); }
+  function size() { dpr = Math.min(2, devicePixelRatio || 1); W = cv.clientWidth; H = cv.clientHeight; cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); }
+  size(); addEventListener('resize', size);
+  addEventListener('pointermove', function (e) { mx = e.clientX / innerWidth - .5; my = e.clientY / innerHeight - .5; }, { passive: true });
+  var visible = true; new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }).observe(cv);
+  var t = 0;
+  function draw() {
+    if (visible) {
+      t += reduce ? 0 : .0022; rx += (my * .8 - rx) * .04; ry += (mx * 1.2 - ry) * .04;
+      var ink = getComputedStyle(root).getPropertyValue('--accent').trim() || '#2f5bd3';
+      ctx.clearRect(0, 0, W, H); ctx.fillStyle = ink;
+      var R = W < 960 ? Math.min(W, H) * .34 : Math.min(W * .34, H * .56), cx = W < 960 ? W * .86 : W * .74, cy = W < 960 ? H * .1 : H * .5;
+      var a = t + ry, b = rx + .35, ca = Math.cos(a), sa = Math.sin(a), cb = Math.cos(b), sb = Math.sin(b);
+      for (var p = 0; p < N; p++) {
+        var x = pts[p][0], y = pts[p][1], z = pts[p][2];
+        var x1 = x * ca + z * sa, z1 = -x * sa + z * ca, y1 = y * cb - z1 * sb, z2 = y * sb + z1 * cb;
+        var s = 1 / (1.9 - z2 * .6);
+        ctx.globalAlpha = Math.max(.05, (z2 + 1) * .2);
+        ctx.beginPath(); ctx.arc(cx + x1 * R * s * 1.1, cy + y1 * R * s * 1.1, (z2 + 1.4) * .75, 0, 6.283); ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+    }
+    if (!reduce) requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
+<script src="assets/jspdf.umd.min.js"></script>
+<script>
+/* Résumé: generated in the browser from this profile, so it never goes out of date. */
+(function () {
+  var P = {
+    name: 'Poornashree M', title: 'Associate Technical Consultant, Perficient',
+    contact: ['poornashree2004@gmail.com', 'poornashree.m@perficient.com', '+91 63821 74395', 'linkedin.com/in/poornashree-m-4301a9278', 'github.com/Poorna-04'],
+    skills: [['Languages', 'Java, Python, TypeScript, JavaScript, SQL'], ['Backend', 'Spring Boot, Spring Security (JWT), JPA/Hibernate, FastAPI, REST/OpenAPI, Flyway, Microservices'], ['Frontend', 'React, Redux, React Router, Next.js, Tailwind CSS, Vite'], ['Data & cloud', 'PostgreSQL, Redis, Google Pub/Sub, Docker, Kubernetes (GKE), GitHub Actions, Jenkins'], ['Observability & testing', 'Datadog, Prometheus, Micrometer, Kibana, JUnit, MockMvc, Testcontainers']],
+    experience: [
+      { role: 'Associate Technical Consultant', org: 'Perficient, Bengaluru', when: 'Sep 2026 – Present', points: [
+        'CareAxis: hospital management system covering registration to discharge, with a Spring Boot core, a FastAPI service for triage, no-show and bed-occupancy predictions, Pub/Sub events and GKE deployment.',
+        'NAO & Advisor 360: paperless wealth-management onboarding with a 15-step KYC application, Ops/Compliance review with OCR checks, and an advisor console with portfolios, risk alerts and AI meeting summaries.',
+        'TuneTown: online musical-instrument store with rentals, tuning bookings and a store-manager console; React, Redux, Spring Boot, PostgreSQL.'] },
+      { role: 'Software Engineer Intern', org: 'Poshmark, Chennai (Core Infrastructure)', when: '7 months', points: [
+        'Built a centralised Java observability library (Micrometer) that monitors microservice dependencies and exposes health metrics to Datadog and Prometheus.',
+        'Contributed to a Java probabilistic-sampling library, integrated into a Ruby application via JRuby to cut high-volume logging and distributed-tracing overhead at scale.',
+        'Built a credentials library that caches and refreshes secrets, avoiding repeated secret-manager client creation across microservices.',
+        'Migrated unclustered Redis clients to pooled Jedis connections, improving connection reuse and latency.'] }
+    ],
+    projects: [['DnceHub', 'Instructor booking platform: Spring Boot, JWT roles, PostgreSQL, Redis, Docker, GitHub Actions CI/CD, Next.js.'], ['Harmoniq', 'Music recommender combining Sentence Transformers search and Librosa audio features with Spotify metadata.'], ['Post-meal glucose prediction', 'YOLO food detection, nutrient mapping and regression on ICMR clinical data.']],
+    education: [['B.Tech, Electronics and Computer Engineering', 'Vellore Institute of Technology, Chennai · 2022 – 2026 · CGPA 9.26'], ['Class XII (CBSE)', 'Sunshine Senior Secondary School, Chennai · 2022 · 92.4%']],
+    extras: ['Google Cloud: Gemini Enterprise Deployment', 'Microsoft Certified: Azure AI Fundamentals', 'Myntra HackerRamp WeForShe 2024: MVP round (top 30 teams nationwide)', 'LeetCode: 244 problems solved', 'Marketing Lead, Event Management Club (+30% event attendance)']
+  };
+  function build() {
+    var J = window.jspdf && window.jspdf.jsPDF; if (!J) return null;
+    var d = new J({ unit: 'pt', format: 'a4' }), W = d.internal.pageSize.getWidth(), H = d.internal.pageSize.getHeight(), M = 46, y = M, w = W - 2 * M;
+    function room(n) { if (y + n > H - M) { d.addPage(); y = M; } }
+    function text(t, size, style, gray, gap, indent) { d.setFont('helvetica', style || 'normal'); d.setFontSize(size); d.setTextColor(gray, gray, gray); d.splitTextToSize(t, w - (indent || 0)).forEach(function (l) { room(size * 1.4); d.text(l, M + (indent || 0), y + size); y += size * 1.38; }); y += gap || 0; }
+    function head(t) { y += 10; room(30); d.setFont('helvetica', 'bold'); d.setFontSize(9); d.setTextColor(10, 10, 10); d.text(t.toUpperCase(), M, y + 9); y += 14; d.setDrawColor(200); d.setLineWidth(.6); d.line(M, y, W - M, y); y += 8; }
+    text(P.name, 24, 'bold', 10, 0); text(P.title, 11.5, 'normal', 60, 2); text(P.contact.join('   ·   '), 9, 'normal', 100, 2);
+    head('Experience'); P.experience.forEach(function (e) { text(e.role + ' — ' + e.org, 10.5, 'bold', 10, 0); text(e.when, 9, 'normal', 110, 3); e.points.forEach(function (p) { text('•  ' + p, 9.6, 'normal', 40, 1, 6); }); y += 4; });
+    head('Skills'); P.skills.forEach(function (s) { text(s[0] + ':  ' + s[1], 9.6, 'normal', 40, 1); });
+    head('Projects'); P.projects.forEach(function (p) { text(p[0], 10, 'bold', 10, 0); text(p[1], 9.6, 'normal', 40, 3); });
+    head('Education'); P.education.forEach(function (e) { text(e[0], 10, 'bold', 10, 0); text(e[1], 9.4, 'normal', 90, 3); });
+    head('Certifications & achievements'); P.extras.forEach(function (x) { text('•  ' + x, 9.6, 'normal', 40, 1, 6); });
+    return d.output('blob');
+  }
+  document.querySelectorAll('[data-resume]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var blob = build(), name = 'Poornashree_M_Resume.pdf';
+      if (!blob) { location.href = 'mailto:poornashree2004@gmail.com?subject=Résumé request'; return; }
+      var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name; document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function () { URL.revokeObjectURL(a.href); }, 4000);
+    });
+  });
+})();
+</script>
+</body>
+</html>

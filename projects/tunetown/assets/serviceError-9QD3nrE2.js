@@ -1,0 +1,1 @@
+var e=class extends Error{constructor(e,t){super(t),this.name=`ServiceError`,this.status=e}};export{e as t};
